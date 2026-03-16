@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>DevOps Task Manager</title>
+ 
+<title>Employee Management System</title>
  
 <style>
  
 body{
 font-family: Arial;
-background-color:#f2f2f2;
 margin:0;
-padding:0;
+background:#f4f6f9;
 }
  
 .header{
@@ -19,19 +19,42 @@ padding:20px;
 text-align:center;
 }
  
-.container{
-width:60%;
-margin:auto;
-margin-top:40px;
-background:white;
-padding:30px;
-border-radius:10px;
-box-shadow:0px 0px 10px gray;
+.sidebar{
+width:200px;
+height:100vh;
+background:#34495e;
+position:fixed;
+color:white;
+padding-top:20px;
 }
  
-input[type=text]{
-width:70%;
+.sidebar a{
+display:block;
+color:white;
+padding:12px;
+text-decoration:none;
+}
+ 
+.sidebar a:hover{
+background:#1abc9c;
+}
+ 
+.main{
+margin-left:210px;
+padding:30px;
+}
+ 
+.card{
+background:white;
+padding:20px;
+border-radius:8px;
+box-shadow:0px 0px 10px #ccc;
+margin-bottom:30px;
+}
+ 
+input{
 padding:10px;
+margin:5px;
 border:1px solid #ccc;
 border-radius:5px;
 }
@@ -49,19 +72,31 @@ button:hover{
 background:#2ecc71;
 }
  
-ul{
+table{
+width:100%;
+border-collapse:collapse;
 margin-top:20px;
 }
  
-li{
-padding:10px;
-border-bottom:1px solid #ddd;
+th,td{
+padding:12px;
+border:1px solid #ddd;
+text-align:center;
+}
+ 
+th{
+background:#2c3e50;
+color:white;
+}
+ 
+.delete{
+background:red;
 }
  
 .footer{
-margin-top:40px;
 text-align:center;
 color:gray;
+margin-top:40px;
 }
  
 </style>
@@ -71,36 +106,91 @@ color:gray;
 <body>
  
 <div class="header">
-<h1>DevOps Task Manager</h1>
-<p>Sample Application for Tomcat Deployment</p>
+<h1>Employee Management Dashboard</h1>
+<p>DevOps Project Deployment using Jenkins | Docker | Tomcat | AWS</p>
 </div>
  
-<div class="container">
+<div class="sidebar">
+<a href="#">Dashboard</a>
+<a href="#">Add Employee</a>
+<a href="#">Employee List</a>
+<a href="#">Reports</a>
+<a href="#">Logout</a>
+</div>
  
-<h2>Add New Task</h2>
+<div class="main">
  
-<input type="text" placeholder="Enter your task here">
-<button>Add Task</button>
+<div class="card">
+<h2>Add Employee</h2>
  
-<h2>Task List</h2>
+<input type="text" placeholder="Employee ID">
+<input type="text" placeholder="Employee Name">
+<input type="text" placeholder="Department">
+<input type="text" placeholder="Salary">
  
-<ul>
+<br><br>
  
-<li>Complete Jenkins Pipeline Setup</li>
-<li>Build Maven Application</li>
-<li>Create Docker Image</li>
-<li>Push Image to DockerHub</li>
-<li>Deploy Container on AWS EC2</li>
+<button>Add Employee</button>
  
-</ul>
+</div>
+ 
+<div class="card">
+ 
+<h2>Employee List</h2>
+ 
+<table>
+ 
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Department</th>
+<th>Salary</th>
+<th>Action</th>
+</tr>
+ 
+<tr>
+<td>101</td>
+<td>Nikhila</td>
+<td>DevOps Engineer</td>
+<td>90000</td>
+<td>
+<button>Edit</button>
+<button class="delete">Delete</button>
+</td>
+</tr>
+ 
+<tr>
+<td>102</td>
+<td>Rahul</td>
+<td>AWS Cloud Engineer</td>
+<td>85000</td>
+<td>
+<button>Edit</button>
+<button class="delete">Delete</button>
+</td>
+</tr>
+ 
+<tr>
+<td>103</td>
+<td>Anjali</td>
+<td>Software Engineer</td>
+<td>80000</td>
+<td>
+<button>Edit</button>
+<button class="delete">Delete</button>
+</td>
+</tr>
+ 
+</table>
  
 </div>
  
 <div class="footer">
-<p>CI/CD Project | Jenkins + Docker + Tomcat + AWS</p>
+<p>End-to-End CI/CD Pipeline Demo Project</p>
+</div>
+ 
 </div>
  
 </body>
- 
 </html>
  
